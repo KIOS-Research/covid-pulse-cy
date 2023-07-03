@@ -1,0 +1,8 @@
+"id","uwwName","station","agg_name","uwwLatitud","uwwLongitu","agg_type","init","station_id_id"
+1,Limassol,ΛΕΜΕΣΟΥ - ΑΜΑΘΟΥΝΤΑΣ (Σ.Α.Λ.Α.),Limassol,34.71127,33.21331,Urban,LIM,1
+2,Paphos,ΠΑΦΟΥ (Σ.Α.Π.Α.),Paphos,34.72693,32.46858,Urban,PAF,2
+4,Ayia Napa,ΑΓΙΑΣ ΝΑΠΑΣ - ΠΑΡΑΛΙΜΝΙΟΥ   ,Ayia Napa,34.99097,34.04097,Urban,AYI,7
+5,Anthoupolis-B,ΑΝΘΟΥΠΟΛΗΣ,Nicosia,35.1044,33.2711,Urban,ANT,5
+6,Larnaca,ΛΑΡΝΑΚΑΣ,Larnaca,34.86444,33.62839,Urban,LAR,6
+7,Vathia-Gonia-A,ΒΑΘΙΑ ΓΩΝΙΑ ΣΑΛ,Nicosia,35.08162,33.44552,Urban,VAT,3
+3,Paralimni,ΑΓΙΑΣ ΝΑΠΑΣ - ΠΑΡΑΛΙΜΝΙΟΥ                 ,Paralimni,35.039,33.9829,Urban,PAR,4

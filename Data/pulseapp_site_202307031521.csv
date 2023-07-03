@@ -1,0 +1,8 @@
+"id","siteID","name","description","publicHealthDepartment","healthRegion","type","geoLat","geoLong","link","notes","polygonID_id"
+1,CY51_UWWTP,Limassol,"",Limassol,Ministry of Health,wwtpMuS,34.71127,33.21331,https://www.sbla.com.cy/,ΛΕΜΕΣΟΥ - ΑΜΑΘΟΥΝΤΑΣ (Σ.Α.Λ.Α.),1
+2,CY61_UWWTP,Paphos,"",Paphos,Ministry of Health,wwtpMuS,34.72693,32.46858,http://www.sapa.org.cy/index.php?option=com_content&view=article&id=11&Itemid=+15&lang=el,ΠΑΦΟΥ (Σ.Α.Π.Α.),2
+3,CY11_5_UWWTP,Vathia-Gonia-A,"",Nicosia,Ministry of Health,wwtpMuS,35.08162,33.44552,https://www.sbn.org.cy/el/ta-ergostasia,ΒΑΘΙΑ ΓΩΝΙΑ ΣΑΛ,7
+4,CY31_UWWTPP,Paralimni,"",Paralimni,Ministry of Health,pStat,35.039,33.9829,http://www.psb.org.cy/,ΑΓΙΑΣ ΝΑΠΑΣ - ΠΑΡΑΛΙΜΝΙΟΥ                 ,3
+5,CY11_4_UWWTP,Anthoupolis-B,"",Nicosia,Ministry of Health,wwtpMuS,35.1044,33.2711,https://www.sbn.org.cy/el/ta-ergostasia,ΑΝΘΟΥΠΟΛΗΣ,5
+6,CY41_UWWTP,Larnaca,"",Larnaca,Ministry of Health,wwtpMuS,34.86444,33.62839,https://www.lsdb.org.cy/,ΛΑΡΝΑΚΑΣ,6
+7,CY31_UWWTPA,Ayia Napa,"",Ayia Napa,Ministry of Health,pStat,34.99097,34.04097,https://www.ansb.org.cy/el/,ΑΓΙΑΣ ΝΑΠΑΣ - ΠΑΡΑΛΙΜΝΙΟΥ   ,4

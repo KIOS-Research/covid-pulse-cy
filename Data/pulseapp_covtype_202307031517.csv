@@ -1,0 +1,15 @@
+"id","type","typedef","unitdef","units","idtype"
+1,covN2,SARS-CoV-2 nucleocapsid gene N2,Gene copies per liter,gc/L,""
+2,covE,SARS-CoV-2 gene region E,Gene copies per liter,gc/L,""
+3,covE,"",Normalised load/day/1000 PE-COD,PE-COD,PE-COD
+4,covE,"",Normalised load/day/1000 PE-BOD,PE-BOD,PE-BOD
+5,covE,"",Normalised load/day/1000 PE-Ntot,PE-Ntot,PE-Ntot
+6,covE,"",Normalised load/day/1000 PE-Ptot,PE-Ptot,PE-Ptot
+7,covE,"",Normalised load/day/1000 PE-NH4,PE-NH4,PE-NH4
+8,covE,"",Normalised load/day/1000 PE,PE,PE
+9,covN2,"",Normalised load/day/1000 PE-COD,PE-COD,PE-COD
+10,covN2,"",Normalised load/day/1000 PE-BOD,PE-BOD,PE-BOD
+11,covN2,"",Normalised load/day/1000 PE-Ntot,PE-Ntot,PE-Ntot
+12,covN2,"",Normalised load/day/1000 PE-Ptot,PE-Ptot,PE-Ptot
+13,covN2,"",Normalised load/day/1000 PE-NH4,PE-NH4,PE-NH4
+14,covN2,"",Normalised load/day/1000 PE,PE,PE

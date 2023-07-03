@@ -4,7 +4,8 @@ Data Entry System of the PULSE project.
 # System Architecture
 
 
-![Uploading system_architecture_2.png…]()
+![system_architecture_2](https://github.com/KIOS-Research/covid-pulse-cy/assets/49236697/20d8e152-0e16-4a18-841a-9f4c978daa61)
+
 
 
 # Data Dictionary

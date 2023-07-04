@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+	<style>
+	.modal-confirm {
+		color: #636363;
+		max-width: 500px;
+		margin-bottom: 20px;
+		margin: auto;
+		text-align: center;
+		margin-top: 20px;        
+	}
+	.modal-confirm .modal-content {
+		/*padding: 20px;*/
+		-webkit-box-shadow: 0 3px 9px rgba(0,0,0,0.1);
+		box-shadow: 0 3px 9px rgba(0,0,0,0.1);
+		border-radius: 5px;
+		border: none;
+		padding: 20px;
+	}
+	.modal-confirm .modal-header {
+		border-bottom: none;
+        position: relative;
+	}
+	.modal-confirm h4 {
+		text-align: center;
+		font-size: 26px;
+		margin: 30px 0 -15px;
+		padding-bottom: 20px;
+	}
+	.modal-confirm .form-control, .modal-confirm .btn {
+		min-height: 40px;
+		border-radius: 3px;
+	}
+	.modal-confirm .close {
+        position: absolute;
+		top: -5px;
+		right: -5px;
+	}
+	.modal-confirm .modal-footer {
+		border: none;
+		text-align: center;
+		border-radius: 5px;
+		font-size: 13px;
+	}
+	
+    .modal-confirm .btn {
+        color: #fff;
+        border-radius: 4px;
+		background: #82ce34;
+		text-decoration: none;
+		transition: all 0.4s;
+        line-height: normal;
+        border: none;
+    }
+	.modal-confirm .btn:hover, .modal-confirm .btn:focus {
+		background: #6fb32b;
+		outline: none;
+	}	
+	</style>
+<center>
+<div class="modal-confirm">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title">SAVED SUCCESSFULLY!</h4>
+</div>
+</div>
+</div>
+</center>
+
+{% endblock %}

@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+
+	input[type=text], select {
+	  width: 60%;
+	  padding: 2px 5px;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 1px;
+	  box-sizing: border-box;
+	}		
+	input[type=number], select {
+	  width: 60%;
+	  padding: 2px 5px;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 1px;
+	  box-sizing: border-box;
+	}		
+	input[type=datetime-local], select {
+	  width: 60%;
+	  padding: 2px 5px;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 1px;
+	  box-sizing: border-box;
+	}
+
+	input[type=date], select {
+	  width: 60%;
+	  padding: 2px 5px;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 1px;
+	  box-sizing: border-box;
+	}
+	
+	input[type=submit] {
+	  width: 15%;
+	  margin-left:10%;
+	  margin-right:10%;
+	  background-color: #4CAF50;
+	  color: white;
+	  padding: 5px 5px;
+	  border: none;
+	  border-radius: 4px;
+	  cursor: pointer;
+	}
+
+	input[type=submit]:hover {
+	  background-color: #45a049;
+	}
+
+	div {
+	  border-radius: 1px;
+	  background-color: white;
+	  padding: 0px;
+	  font-size: 15px;
+	}
+			
+</style>
+
+
+<center><h4>Add Trends Data</h4></center>
+<form method="POST" id="trends" name="trends" onsubmit="return validateForm()">
+    {% csrf_token %}
+    {% if form.errors %}
+        {% for field in form %}
+            {% for error in field.errors %}
+                <div class="alert alert-danger" id="fielderrors1">
+                    <strong>{{ error|escape }}</strong>
+                </div>
+            {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+            <div class="alert alert-danger" id="fielderrors2">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+
+<input type="submit" value="Submit" align="center" style="float: right;">
+
+<div class="container">
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active show">
+        <div class="form-group">
+            <label class="form-label2"><b>{{form.fromdate.label}}</b></label><br>{{form.fromdate}}<br><br>
+            <label class="form-label2"><b>{{form.todate.label}}</b></label><br>{{form.todate}}<br><br>
+            <label class="form-label2"><b>{{form.samplestationid.label}}</b></label><br>{{form.samplestationid}}<br><br>
+            <label class="form-label2"><b>{{form.value.label}}</b></label><br>{{form.value}}<br><br>
+        </div>
+    </div>
+  </div>
+</div>
+</form>
+
+<script>
+    function set_max_date(e){
+          var to_date = document.getElementById("id_todate");
+          to_date.min=e.value
+    }
+
+    function validateForm(){
+           var valid = false
+           for (k = 0; k < document.getElementById('id_form-TOTAL_FORMS').value ; k++) {
+               var value = document.getElementById('id_form-'+k+'-value').value ;
+               if(value !== ""){
+                    valid = true
+               }
+           }
+           if(valid == false){
+               alert("Please fill at least one value")
+           }
+           return valid
+    }
+
+</script>
+
+
+{% endblock %}
+
+
+
+
+

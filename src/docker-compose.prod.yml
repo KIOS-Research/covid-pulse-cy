@@ -1,0 +1,48 @@
+version: '3.7'
+
+services:
+  web:
+    build:
+      context: ./app
+      dockerfile: Dockerfile.prod
+    restart: unless-stopped
+    command: gunicorn pulsecovid.wsgi:application --bind 0.0.0.0:8001 --workers=2 --preload
+    volumes:
+      - static_volumepublic:/home/app/web/staticfiles
+    expose:
+      - 8001
+    env_file:
+      - ./.env.prod
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+    deploy:
+      resources:
+        limits:
+          memory: 9000M
+        reservations:
+          memory: 20M
+  nginx:
+    build: ./nginx
+    restart: unless-stopped
+    volumes:
+      - static_volumepublic:/home/app/web/staticfiles
+    ports:
+      - 8127:80
+    depends_on:
+      - web
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+    deploy:
+      resources:
+        limits:
+          memory: 3000M
+        reservations:
+          memory: 20M
+volumes:
+  static_volumepublic:

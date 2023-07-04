@@ -1,0 +1,169 @@
+{% load static %}
+{% load custom_tags %}
+
+<!DOCTYPE html>
+<head>
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	    <!-- Bootstrap 4 -->
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+    <!-- jQuery -->
+    <link rel="stylesheet" href="{% static 'datatables/jquery.css'%}">
+
+    <!-- jQuery -->
+    <script src="{%static 'js/jquery.js'%}"></script>
+    <!-- DataTables -->
+    <script src="{%static 'datatables/jquery.js'%}"></script>
+
+    <title>PULSE COVID</title>
+	<style>
+		div.newskiosheaderimage {
+			content:url('{% static 'images/logos2.png' %}');
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+        .navbar-custom {
+            background-color:#e3f2fd;;
+        }
+
+        /* change the link color and padding  */
+        .navbar-custom .navbar-nav .nav-link {
+            color: black;
+            padding: .75rem 1rem;
+        }
+
+        /* change the color and bg color of active or hovered links */
+        .navbar-custom .nav-item.active .nav-link,
+        .navbar-custom .nav-item:hover .nav-link {
+            background-color: #117a8b;
+            color: whitesmoke;
+        }
+
+        /* for dropdown only - change the color of droodown */
+        .navbar-custom .dropdown-menu {
+            background-color: #e3f2fd;
+        }
+
+        .navbar-custom .dropdown-item:hover,
+        .navbar-custom .dropdown-item:focus {
+            background-color: #117a8b;
+            color: whitesmoke;
+        }
+
+	</style>
+    {% block title %}
+    {% endblock %}
+</head>
+<body>
+<div class='newskiosheaderimage'></div>
+
+{#<nav class="navbar navbar-light" style="background-color: #e3f2fd;">#}
+{#  {% if request.user %}#}
+{#    {% if request.user|has_group:"admin" %}#}
+{#      <a class="navbar-brand" href="{% url 'pulseapp:sampledata' %}">Add Sampling Data</a>#}
+{#      <a class="navbar-brand" href="{% url 'pulseapp:viewsampledata' %}">View Sampling Data</a>#}
+{#      <a class="navbar-brand" href="{% url 'pulseapp:viewwwmeasure' %}">View Measurements</a>#}
+{#        <a class="navbar-brand" href="{% url 'pulseapp:trendsdata' %}">Add Trends</a>#}
+{#        <a class="navbar-brand" href="{% url 'pulseapp:viewtrends' %}">View Trends</a>#}
+{#        <a class="navbar-brand" href="{% url 'pulseapp:variantsdata' %}">Add Variants</a>#}
+{#        <a class="navbar-brand" href="{% url 'pulseapp:viewvariants' %}">View Variants</a>#}
+{#    {% elif request.user|has_group:"trends"  %}#}
+{#        <a class="navbar-brand" href="{% url 'pulseapp:trendsdata' %}">Add Trends</a>#}
+{#        <a class="navbar-brand" href="{% url 'pulseapp:viewtrends' %}">View Trends</a>#}
+{#    {% elif request.user|has_group:"variants"  %}#}
+{#        <a class="navbar-brand" href="{% url 'pulseapp:variantsdata' %}">Add Variants</a>#}
+{#        <a class="navbar-brand" href="{% url 'pulseapp:viewvariants' %}">View Variants</a>#}
+{#    {% endif %}#}
+{#  {% endif %}#}
+{##}
+{#  {% if user.is_authenticated %}#}
+{#    {{user.username}}#}
+{#    [{{user.email}}]#}
+{#  {% endif %}#}
+{##}
+{#  <a class="navbar-brand" href="{% url 'logout' %}">Logout</a>#}
+{#</nav>#}
+<nav class="navbar navbar-expand-sm navbar-custom py-0">
+    {% if user.is_authenticated %}
+    <div class="navbar-collapse collapse navbar-custom" >
+        <ul class="navbar-nav">
+{#            <li class="nav-item {%if tab == 'home' %} active {% endif %}">#}
+{#                <a class="nav-link" href="{% url 'pulseapp:index' %}">Home</a>#}
+{#            </li>#}
+            {% if request.user|has_group:"admin" %}
+            <li class="nav-item dropdown {%if tab == 'sampling' %} active {% endif %}">
+                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Sampling
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'pulseapp:sampledata' %}">Add Sampling Data</a>
+                    <a class="dropdown-item" href="{% url 'pulseapp:viewsampledata' %}">View Sampling Data</a>
+                    <a class="dropdown-item" href="{% url 'pulseapp:viewwwmeasure' %}">View Measurements</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown {%if tab == 'trends' %} active {% endif %}">
+                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Trends
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'pulseapp:trendsdata' %}">Add Trends</a>
+                    <a class="dropdown-item" href="{% url 'pulseapp:viewtrends' %}">View Trends</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown {%if tab == 'variants' %} active {% endif %}">
+                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Variants
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'pulseapp:variantsdata' %}">Add Variants</a>
+                    <a class="dropdown-item" href="{% url 'pulseapp:viewvariants' %}">View Variants</a>
+                    <a class="dropdown-item" href="{% url 'pulseapp:addvariantstype' %}">Add Variants Type</a>
+                    <a class="dropdown-item" href="{% url 'pulseapp:viewvariantstype' %}">View Variants Type</a>
+                </div>
+            </li>
+            {% elif request.user|has_group:"trends"  %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Trends
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'pulseapp:trendsdata' %}">Add Trends</a>
+                        <a class="dropdown-item" href="{% url 'pulseapp:viewtrends' %}">View Trends</a>
+                    </div>
+                </li>
+            {% elif request.user|has_group:"variants"  %}
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Variants
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'pulseapp:variantsdata' %}">Add Variants</a>
+                        <a class="dropdown-item" href="{% url 'pulseapp:viewvariants' %}">View Variants</a>
+                        <a class="dropdown-item" href="{% url 'pulseapp:addvariantstype' %}">Add Variants Type</a>
+                        <a class="dropdown-item" href="{% url 'pulseapp:viewvariantstype' %}">View Variants Type</a>
+
+                    </div>
+                </li>
+            {% endif %}
+        </ul>
+        <span class="ml-auto navbar-text"><a href="{% url 'pulseapp:changePass' %}">{{user.username}}[{{user.email}}]</a></span>
+        <span class="ml-auto navbar-text"><a href="{% url 'logout' %}">Logout</a></span>
+    </div>
+    {% endif %}
+</nav>
+{% block content %}
+{% endblock %}
+
+
+<script src="{%static 'js/bootstrap.min.js'%}"></script>
+<script>
+    $('.nav nav-item .nav-link').click(function(){
+        $(this).addClass("active"); });
+</script>
+</body>
+</html>

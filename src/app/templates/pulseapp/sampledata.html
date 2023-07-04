@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+
+	input[type=text], select {
+	  width: 60%;
+	  padding: 2px 5px;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 1px;
+	  box-sizing: border-box;
+	}		
+	input[type=number], select {
+	  width: 60%;
+	  padding: 2px 5px;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 1px;
+	  box-sizing: border-box;
+	}		
+	input[type=datetime-local], select {
+	  width: 60%;
+	  padding: 2px 5px;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 1px;
+	  box-sizing: border-box;
+	}
+
+	input[type=date], select {
+	  width: 60%;
+	  padding: 2px 5px;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 1px;
+	  box-sizing: border-box;
+	}
+	
+	input[type=submit] {
+	  width: 15%;
+	  margin-left:10%;
+	  margin-right:10%;
+	  background-color: #4CAF50;
+	  color: white;
+	  padding: 5px 5px;
+	  border: none;
+	  border-radius: 4px;
+	  cursor: pointer;
+	}
+
+	input[type=submit]:hover {
+	  background-color: #45a049;
+	}
+
+	div {
+	  border-radius: 1px;
+	  background-color: white;
+	  padding: 0px;
+	  font-size: 15px;
+	}
+			
+</style>
+
+<center><h4>Add Sampling Data</h4></center>
+<form method="POST" id="demo" name="demo">
+    {% csrf_token %}
+    {% if sampleform.errors %}
+        {% for field in sampleform %}
+            {% for error in field.errors %}
+                <div class="alert alert-danger" id="fielderrors1">
+                    <strong>{{ error|escape }}</strong>
+                </div>
+            {% endfor %}
+        {% endfor %}
+        {% for error in sampleform.non_field_errors %}
+            <div class="alert alert-danger" id="fielderrors2">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endif %}
+	
+	{% if cove_formset.errors %}
+        {% for field in cove_formset %}
+            {% for error in field.errors %}
+                <div class="alert alert-danger" id="fielderrors1">
+                    <strong>{{ error|escape }}</strong>
+                </div>
+            {% endfor %}
+        {% endfor %}
+        {% for error in cove_formset.non_field_errors %}
+            <div class="alert alert-danger" id="fielderrors2">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    {% if covN2_formset.errors %}
+        {% for field in covN2_formset %}
+            {% for error in field.errors %}
+                <div class="alert alert-danger" id="fielderrors1">
+                    <strong>{{ error|escape }}</strong>
+                </div>
+            {% endfor %}
+        {% endfor %}
+        {% for error in covN2_formset.non_field_errors %}
+            <div class="alert alert-danger" id="fielderrors2">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+<input type="submit" value="Submit" align="center" style="float: right;">
+
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li ><a class="nav-link active" data-toggle="tab" href="#home">Sample</a></li>
+	{% for t in types %}
+    <li><a class="nav-link" data-toggle="tab" href="#menu{{t}}">{{t}}</a></li>
+	{% endfor %}
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active show">
+	  <br>
+		<label class="form-label2"><b>{{sampleform.location.label}}</b></label><br>{{sampleform.location}}<br><br>
+		<label class="form-label2"><b>{{sampleform.datestart.label}}</b></label><br>{{sampleform.datestart}}<br><br>
+		<label class="form-label2"><b>{{sampleform.dateend.label}}</b></label><br>{{sampleform.dateend}}<br><br>
+		<label class="form-label2"><b>{{sampleform.notes.label}}</b></label><br>{{sampleform.notes}}<br><br>
+		<label class="form-label2"><b>{{sampleform.analysis_date.label}}</b></label><br>{{sampleform.analysis_date}}
+    </div>
+	{{ cov_formset.management_form }}
+    {% for t in types %}
+    <div id="menu{{t}}" class="tab-pane fade">
+		 <br>
+        {% for p in cov_formset%}
+            {% if p.type.value|stringformat:"s" == t|stringformat:"s" %}
+                <div style="display: none">{{ p.type }} {{ p.covtype }}</div>
+                <label class="form-label2"><b>Value ({{p.unit.value}})</b></label><br>
+                {{ p.value }}
+                <br>
+            {% endif %}
+        {% endfor %}
+        <label class="form-label2"><b>Measurement Notes</b></label><br>
+        <input type="text" name="{{t}}_notes">
+    </div>
+	{% endfor %}
+
+  </div>
+</div>
+</form>
+
+<script>
+    function set_max_date(e){
+          var to_date = document.getElementById("id_dateend");
+          to_date.min=e.value
+    }
+    function set_max_date_analysis(e){
+          var to_date = document.getElementById("id_analysis_date");
+          to_date.min=e.value
+    }
+</script>
+
+
+{% endblock %}
+
+
+
+
+

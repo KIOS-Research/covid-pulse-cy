@@ -1,0 +1,194 @@
+{% extends 'base.html' %}
+{% load i18n static %}
+{% block title %}
+
+<style>
+
+	div {
+	  border-radius: 1px;
+	  background-color: white;
+	  padding: 0px;
+	  font-size: 14px;
+	}
+	form{
+	  display:inline;
+	}
+    th{
+    border-bottom:1px solid #000;
+    }
+</style>
+
+     <script type="text/javascript">
+        var TESTMODEL_LIST_JSON_URL = "{% url 'pulseapp:viewvariantsdataListJson' %}";
+        // translations for datatables
+
+        var dt_language = {
+            "emptyTable":     '{% trans "No data available in table" %}',
+            "info":           '{% trans "Showing _START_ to _END_ of _TOTAL_ entries" %}',
+            "infoEmpty":      '{% trans "Showing 0 to 0 of 0 entries" %}',
+            "infoFiltered":   '{% trans "(filtered from _MAX_ total entries)" %}',
+            "infoPostFix":    "",
+            "thousands":      ",",
+            "lengthMenu":     '{% trans "Show _MENU_ entries" %}',
+            "loadingRecords": '{% trans "Loading..." %}',
+            "processing":     '{% trans "Processing..." %}',
+            "search":         '{% trans "Search:" %}',
+            "zeroRecords":    '{% trans "No matching records found" %}',
+            "paginate": {
+                "first":      '{% trans "First" %}',
+                "last":       '{% trans "Last" %}',
+                "next":       '{% trans "Next" %}',
+                "previous":   '{% trans "Previous" %}'
+            },
+            "aria": {
+                "sortAscending":  '{% trans ": activate to sort column ascending" %}',
+                "sortDescending": '{% trans ": activate to sort column descending" %}'
+            }
+        }
+    </script>
+{% endblock %}
+{% block content %}
+<center><h6>View Variants Data</h6></center>
+<div class="container">
+<div id="modal-div">
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                 <p class="{{ message.tags }}" style="color: red; font-size: 32px">
+                {% if 'safe' in message.tags %}{{ message|safe }}{% else %}{{ message }}{% endif %}
+                </p>
+            {%else%}
+                <p class="{{ message.tags }}" style="color: darkgreen; font-size: 32px">
+                {% if 'safe' in message.tags %}{{ message|safe }}{% else %}{{ message }}{% endif %}
+                </p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+</div><form name="exportFile" action="export/" method="get">
+<input type="submit" id="exportFile" name="exportFile" value="Export Data">
+</form>
+<input type="submit" id="button" name="button" value="DELETE" style="float: right;">
+<input type="submit" id="edit_button" name="edit_button" value="EDIT" style="float: right; margin-right:15px;">
+<br>
+<br>
+<table class="datatable" id="datatable">
+	<thead>
+		<th>{% trans "A/A" %}</th>
+		<th>{% trans "Submited DateTime" %}</th>
+		<th>{% trans "Start Date" %}</th>
+		<th>{% trans "End Date" %}</th>
+		<th>{% trans "Sample Station" %}</th>
+		<th>{% trans "Lineage" %}</th>
+        <th>{% trans "VariantType" %}</th>
+        <th>{% trans 'comment' %}</th>
+        <th>{% trans "User" %}</th>
+	</thead>
+	<tbody>
+	</tbody>
+</table>
+</div>
+
+
+<script>
+$(document).ready(function() {
+    var table = $('#datatable').dataTable({
+        language: dt_language,
+        order: [[ 0, "desc" ]],
+        lengthMenu: [[25, 50, 100, 200], [25, 50, 100, 200]],
+        columnDefs: [
+            {orderable: true,
+             searchable: false,
+             className: "center",
+             targets: [0]
+            },
+            {
+                data: 'id',
+                targets: [0],
+                'visible':true,
+                searchable: false,
+            },
+            {
+                data: 'submited_datetime',
+                targets: [1]
+            },
+            {
+                data: 'datestart',
+                targets: [2]
+            },
+            {
+                data: 'dateend',
+                targets: [3]
+
+            },
+            {
+                data: 'location',
+                targets: [4],
+            },
+            {
+                data: 'Lineage',
+                targets: [5]
+            },
+            {
+                data: 'VariantType',
+                targets: [6],
+            },
+            {
+                data: 'comment',
+                targets: [7]
+            },
+            {
+                data: 'loginname',
+                targets: [8],
+            }
+        ],
+        searching: true,
+        processing: true,
+        serverSide: true,
+        stateSave: true,
+        ajax: {
+            "url": TESTMODEL_LIST_JSON_URL,
+            "type": "POST",
+            headers: {'X-CSRFToken': '{{ csrf_token }}'},
+        }
+    });
+
+    var table = $('#datatable').DataTable();
+
+	$('#datatable tbody').on('click', 'tr', function () {
+            $('tr').css('background-color', '')
+            $(this).css('background-color', 'cyan')
+            data = table.row(this).data();
+            //window.location.href="/delete/"+data['id'];
+            //window.location.href="/editdata/"+data['id'];
+        });
+	
+$("#button").click(function () {
+  var selectedRows = table.rows({"selected": true});
+  if (confirm("Are you sure you want to delete this record?")) {
+      $.ajax({
+          url: "{%url 'pulseapp:deleteEntryVariantsData' %}",
+          type: 'get',
+          data: data,
+          success: function (data, status, xhr) {
+            if (data.success){
+                window.location.href = "{%url 'pulseapp:viewvariants'%}"
+                table.rows({"selected": true}).deselect().remove().draw();
+            }
+            else{
+                alert('delete fail')
+            }
+
+          }
+        })
+  }
+});
+$("#edit_button").click(function () {
+    var selectedRows = table.rows({"selected": true});
+    var url = "{%url 'pulseapp:variantsedit' 123 %}"
+    url = url.replace('123', data['id']);
+    console.log(url)
+    window.location.href = url
+    });
+});
+</script>
+{% endblock %}

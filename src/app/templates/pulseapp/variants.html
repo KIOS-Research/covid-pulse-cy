@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+
+	input[type=text], select {
+	  width: 60%;
+	  padding: 2px 5px;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 1px;
+	  box-sizing: border-box;
+	}		
+	input[type=number], select {
+	  width: 60%;
+	  padding: 2px 5px;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 1px;
+	  box-sizing: border-box;
+	}		
+	input[type=datetime-local], select {
+	  width: 60%;
+	  padding: 2px 5px;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 1px;
+	  box-sizing: border-box;
+	}
+
+	input[type=date], select {
+	  width: 60%;
+	  padding: 2px 5px;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 1px;
+	  box-sizing: border-box;
+	}
+	
+	input[type=submit] {
+	  width: 15%;
+	  margin-left:10%;
+	  margin-right:10%;
+	  background-color: #4CAF50;
+	  color: white;
+	  padding: 5px 5px;
+	  border: none;
+	  border-radius: 4px;
+	  cursor: pointer;
+	}
+
+	input[type=submit]:hover {
+	  background-color: #45a049;
+	}
+
+	div {
+	  border-radius: 1px;
+	  background-color: white;
+	  padding: 0px;
+	  font-size: 15px;
+	}
+			
+</style>
+
+
+<center><h4>Add Variants Data</h4></center>
+<form method="POST" id="trends" name="trends">
+    {% csrf_token %}
+    {% if form.errors %}
+        {% for field in form %}
+            {% for error in field.errors %}
+                <div class="alert alert-danger" id="fielderrors1">
+                    <strong>{{ error|escape }}</strong>
+                </div>
+            {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+            <div class="alert alert-danger" id="fielderrors2">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+
+<input type="submit" value="Submit" align="center" style="float: right;">
+
+<div class="container">
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active show">
+            <div class="form-group">
+                <label class="form-label2"><b>{{form.location.label}}</b></label><br>{{form.location}}<br><br>
+                <label class="form-label2"><b>{{form.dateend.label}}</b></label><br>{{form.dateend}}<br><br>
+                <label class="form-label2"><b>{{form.Lineage.label}}</b></label><br>{{form.Lineage}}<br><br>
+                <label class="form-label2"><b>{{form.n_variants.label}}</b></label><br>{{form.n_variants}}<br><br>
+                <div id="new_div" style="display: none">{{form.new_variant}}<br><br></div>
+                <label class="form-label2"><b>{{form.comment.label}}</b></label><br>{{form.comment}}<br><br>
+            </div>
+    </div>
+  </div>
+</div>
+</form>
+
+
+<script>
+
+function check_select(data){
+    console.log(data.value)
+    div= document.getElementById('new_div')
+    new_variant= document.getElementById('id_new_variant');
+    if (data.value=='Other'){
+        div.style.display = "inline";
+        new_variant.required=true;
+    }else {
+        div.style.display = "none";
+        new_variant.required=false;
+    }
+}
+</script>
+{% endblock %}
+
+
+
+
+

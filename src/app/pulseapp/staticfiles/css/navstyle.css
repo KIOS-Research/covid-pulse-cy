@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+body {
+  margin-left: 5%;
+  margin-right: 5%;
+  font-family: 'Roboto', sans-serif;
+}
+
+#nav-colors, #font-colors, #edges {
+  margin-top: 10px;
+}
+#nav-colors .btn, #font-colors .btn, #edges .btn {
+  display: inline-block;
+  padding: 10px;
+  margin: 0 5px;
+  border: 2px solid #111111;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+#nav-colors .btn:hover, #font-colors .btn:hover, #edges .btn:hover {
+  border: 2px solid white;
+}
+
+#nav-colors #orange {
+  background: -webkit-gradient(linear, left top, right top, from(#e43a15), to(#e65245));
+  background: linear-gradient(to right, #e43a15, #e65245);
+}
+
+#font-colors #white {
+  background: white;
+}
+#font-colors #black {
+  background: black;
+}
+
+.navbar {
+  border: 0;
+  border-radius: 8px;
+  background: -webkit-gradient(linear, left top, right top, from(#ff5858), to(#f857a6));
+  background: linear-gradient(to right, #e48a15, #e65245);
+}
+.navbar .nav li > a, .navbar .navbar-brand {
+  max-height: 50px;
+  width: auto;
+  background: transparent !important;
+  font-size: 18px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+.navbar .nav li > a:hover, .navbar .navbar-brand:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  font-size: 14px;
+}
+.navbar .nav li > a:hover .link, .navbar .navbar-brand:hover .link {
+  width: 100%;
+  padding: 0 5px 0 5px;
+  visibility: visible;
+  font-size: 14px;
+}
+.navbar .link {
+  width: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  visibility: hidden;
+  font-size: 0px;
+}
+.navbar span {
+  color: white;
+}
+.navbar .navbar-toggle {
+  padding-right: 0;
+}
+.navbar .navbar-toggle .icon-bar {
+  background: white;
+}
+.navbar .navbar-collapse {
+  display: none;
+}
+.navbar button {
+  background: transparent;
+}
+.navbar button[type=submit] {
+  padding-right: 0;
+}
+.navbar button[type=submit] span {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.navbar button[type=submit]:hover span {
+  -webkit-transform: scale(1.3) rotate(90deg);
+          transform: scale(1.3) rotate(90deg);
+}
+.navbar form {
+  padding: 0;
+}
+.navbar form .form-control {
+  border: 0;
+  border-radius: 8px;
+  color: black;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.7);
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+.navbar form .form-control:hover {
+  background: white;
+}
+.navbar .dropdown .fa-caret-down {
+  padding-left: 3px;
+  font-size: 18px;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+.navbar .dropdown.open {
+  background-color: rgba(255, 255, 255, 0.2);
+  font-size: 14px;
+}
+.navbar .dropdown.open .link {
+  width: 100%;
+  visibility: visible;
+  font-size: 14px;
+  padding: 0 5px 0 5px;
+}
+.navbar .dropdown.open .dropdown-toggle {
+  font-size: 14px;
+}
+.navbar .dropdown.open .fa-caret-down {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.navbar .dropdown .dropdown-menu {
+  min-width: 0px !important;
+  width: 100%;
+  background: #ff5858;
+  text-align: center;
+  border-bottom-right-radius:8px;
+  border-bottom-left-radius:8px;
+}
+.navbar .dropdown .dropdown-menu li, .navbar .dropdown .dropdown-menu a {
+  color: white;
+  font-size: 14px;
+  line-height: 30px;
+}
+.navbar .dropdown .dropdown-menu li:hover, .navbar .dropdown .dropdown-menu a:hover {
+  color: white;
+  letter-spacing: 1px;
+  background: transparent;
+}
+.navbar .dropdown .dropdown-menu a {
+  padding: 0 15px 0 15px;
+}
+
+@media (max-width: 769px) {
+  .navbar .link {
+    padding-left: 10px;
+    visibility: visible;
+    width: 100%;
+    font-size: 14px;
+  }
+  .navbar .navbar-brand .link {
+    visibility: hidden;
+  }
+
+  .dropdown .dropdown-menu {
+    text-align: left !important;
+  }
+
+  button[type=submit] {
+    width: 50%;
+    float: left;
+  }
+
+  .navbar-form {
+    border: 0;
+  }
+
+  .form-group {
+    padding: 0;
+    margin: 0;
+  }
+  .form-group input {
+    width: 50%;
+    float: left;
+  }
+}

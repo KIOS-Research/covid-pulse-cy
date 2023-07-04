@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+.form-label {
+    margin-left: 20%;
+}
+	input[type=text], select {
+	  width: 60%;
+	  padding: 3px 10px;
+	  margin-left: 20%;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 1px;
+	  box-sizing: border-box;
+	}		
+	input[type=number], select {
+	  width: 60%;
+	  padding: 3px 10px;
+	  margin-left: 20%;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 1px;
+	  box-sizing: border-box;
+	}		
+	input[type=datetime-local], select {
+	  width: 60%;
+	  padding: 3px 10px;
+	  margin-left: 20%;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 1px;
+	  box-sizing: border-box;
+	}
+
+	input[type=date], select {
+	  width: 60%;
+	  padding: 3px 10px;
+	  margin-left: 20%;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 1px;
+	  box-sizing: border-box;
+	}
+	
+	input[type=submit] {
+	  width: 60%;
+	  background-color: #4CAF50;
+	  color: white;
+	  padding: 7px 10px;
+	  margin-left: 20%;
+	  border: none;
+	  border-radius: 3px;
+	  cursor: pointer;
+	}
+
+	input[type=submit]:hover {
+	  background-color: #45a049;
+	}
+
+	div {
+	  border-radius: 1px;
+	  background-color: white;
+	  padding: 5px;
+	}
+			
+</style>
+
+<center><h6>Edit Sampling Data</h6></center>
+<form method="POST" id="demo" name="demo">
+    {% csrf_token %}
+    {% if SampleDataForm.errors %}
+        {% for field in SampleDataForm %}
+            {% for error in field.errors %}
+                <div class="alert alert-danger" id="fielderrors1">
+                    <strong>{{ error|escape }}</strong>
+                </div>
+            {% endfor %}
+        {% endfor %}
+        {% for error in SampleDataForm.non_field_errors %}
+            <div class="alert alert-danger" id="fielderrors2">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endif %}
+	{% if WWWmeasureDataForm.errors %}
+        {% for field in WWWmeasureDataForm %}
+            {% for error in field.errors %}
+                <div class="alert alert-danger" id="fielderrors1">
+                    <strong>{{ error|escape }}</strong>
+                </div>
+            {% endfor %}
+        {% endfor %}
+        {% for error in WWWmeasureDataForm.non_field_errors %}
+            <div class="alert alert-danger" id="fielderrors2">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endif %}
+	<div class="form-group has-success">
+		<label class="form-label"><b>{{SampleDataForm.location.label}}</b></label><br>{{SampleDataForm.location}}<br>
+		<label class="form-label"><b>{{SampleDataForm.datetimestart.label}}</b></label><br>{{SampleDataForm.datetimestart}}<br>
+		<label class="form-label"><b>{{SampleDataForm.datetimeend.label}}</b></label><br>{{SampleDataForm.datetimeend}}<br>
+		<label class="form-label"><b>{{SampleDataForm.notes.label}}</b></label><br>{{SampleDataForm.notes}}
+	<label class="form-label"><b>{{WWWmeasureDataForm.type.label}}</b></label><br>{{WWWmeasureDataForm.type}}
+	<label class="form-label"><b>{{WWWmeasureDataForm.analysisdate.label}}</b></label><br>{{WWWmeasureDataForm.analysisdate}}
+	<label class="form-label"><b>{{WWWmeasureDataForm.value.label}}</b></label><br>{{WWWmeasureDataForm.value}}
+	<label class="form-label"><b>{{WWWmeasureDataForm.notes.label}}</b></label><br>{{WWWmeasureDataForm.notes}}
+	</div>
+    <input type="submit" value="Submit">
+	
+</form>
+
+{% endblock %}

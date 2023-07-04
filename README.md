@@ -19,13 +19,12 @@ to better understand the dynamics and spatiotemporal trends of the COVID-19 pand
 
 ## System Architecture
 
-<center><img src="https://github.com/KIOS-Research/covid-pulse-cy/assets/49236697/20d8e152-0e16-4a18-841a-9f4c978daa61" style="width:75%;"></center>
+<img src="https://github.com/KIOS-Research/covid-pulse-cy/assets/49236697/20d8e152-0e16-4a18-841a-9f4c978daa61">
 
 
 ## Data Dictionary
 
-<center><img src="https://github.com/KIOS-Research/covid-pulse-cy/assets/49236697/360a7143-19f5-4013-a054-7982046e94fb" 
-style="width: 75%;"></center>
+<img src="https://github.com/KIOS-Research/covid-pulse-cy/assets/49236697/360a7143-19f5-4013-a054-7982046e94fb">
 
 
 ## Acknowledgements 

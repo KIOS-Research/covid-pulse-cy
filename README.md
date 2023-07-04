@@ -1,9 +1,9 @@
-# covid-pulse-cy
-
 # PULSE: Pancyprian sUrveilLance of SARS-CoV-2 in urban wastEwater
+<img src="https://github.com/KIOS-Research/covid-pulse-cy/assets/49236697/d7dafc3f-0e8d-4a30-8f73-d05c2db378ea" width="180" align="right">
+
 
 Systematically monitoring of urban wastewater in Cyprus for the presence of selected RNA genetic markers of the SARS-CoV-2 virus and its variants, 
-to better understand the dynamics and spatiotemporal trends of the COVID-19 pandemic.   ![logopulse](https://github.com/KIOS-Research/covid-pulse-cy/assets/49236697/d7dafc3f-0e8d-4a30-8f73-d05c2db378ea)
+to better understand the dynamics and spatiotemporal trends of the COVID-19 pandemic.  
 
 
 # System Architecture

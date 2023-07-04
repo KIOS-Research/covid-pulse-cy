@@ -17,29 +17,42 @@ to better understand the dynamics and spatiotemporal trends of the COVID-19 pand
 
 
 
-# System Architecture
+## System Architecture
 
-![system_architecture_2](https://github.com/KIOS-Research/covid-pulse-cy/assets/49236697/20d8e152-0e16-4a18-841a-9f4c978daa61)
-
-
-
-# Data Dictionary
-
-![data_model](https://github.com/KIOS-Research/covid-pulse-cy/assets/49236697/360a7143-19f5-4013-a054-7982046e94fb)
+<center><img src="https://github.com/KIOS-Research/covid-pulse-cy/assets/49236697/20d8e152-0e16-4a18-841a
+-9f4c978daa61" style="transform: scale(0.75);"></center>
 
 
-# Acknowledgements 
+## Data Dictionary
 
-There is a large team of scientists with diverse scientific backgrounds and expertise working for PULSE. The team comprises: 
+<center><img src="https://github.com/KIOS-Research/covid-pulse-cy/assets/49236697/360a7143-19f5-4013-a054-7982046e94fb" 
+style="width: 75%;"></center>
 
-The Nireas-International Water Research Center (Nireas-IWRC) of the University of Cyprus who is responsible for the determination of the SARS-CoV-2 genetic fragments and the epidemiological analysis of SARS-CoV-2 concentrations in urban wastewater.
 
-The KIOS Research and Innovation Centre of Excellence (KIOS CoE) of the University of Cyprus who is responsible for the development of the SARS-CoV-2 monitoring platform .
+## Acknowledgements 
 
-The Molecular Virology Department of the Cyprus Institute of Neurology and Genetics (CING) who is responsible for the identification of the most prevalent SARS-CoV-2 variants in urban wastewater. 
+There is a large team of scientists with diverse scientific backgrounds and expertise working for PULSE. The team 
+comprises: 
 
-In the framework of Commission Recommendation (EU) 2021/472, the European Commission financed the Water Development Department (WDD) as the Coordinating Authority for wastewater to coordinate the establishment of a systematic surveillance of SARS-CoV-2 and its variants in the wastewater of Cyprus.  
+- The [Nireas-International Water Research Center (Nireas-IWRC)](https://nireas-iwrc.org/) of the [University of 
+  Cyprus](https://www.ucy.ac.cy/) who is responsible for 
+  the 
+determination of the SARS-CoV-2 genetic fragments and the epidemiological analysis of SARS-CoV-2 concentrations in urban wastewater.
 
-The project is financed by the Water Development Department (WDD) of the Ministry of Agriculture, Rural Development and Environment and the Medical and Public Health Services (MPHS) of the Ministry of Health of the Republic of Cyprus. 
+- The [KIOS Research and Innovation Centre of Excellence (KIOS CoE)](https://www.kios.ucy.ac.cy/) of the [University of Cyprus](https://www.ucy.ac.cy/) who is responsible 
+  for 
+the development of the SARS-CoV-2 monitoring platform .
+
+- The [Molecular Virology Department of the Cyprus Institute of Neurology and Genetics (CING)](https://www.cing.ac.cy/en/about-us/biomedical-sciences-/mv) who is responsible for 
+the identification of the most prevalent SARS-CoV-2 variants in urban wastewater. 
+
+In the framework of Commission Recommendation (EU) 2021/472, the European Commission financed the [Water Development 
+Department (WDD)](http://www.moa.gov.cy/moa/wdd/Wdd.nsf/index_en/index_en?OpenDocument) as the Coordinating Authority for wastewater to coordinate the establishment of a systematic 
+surveillance of SARS-CoV-2 and its variants in the wastewater of Cyprus.  
+
+The project is financed by the [Water Development Department (WDD)](http://www.moa.gov.cy/moa/wdd/Wdd.nsf/index_en/index_en?OpenDocument) of the [Ministry of Agriculture](https://moa.gov.cy/ministry/mission/?lang=en), [Rural Development 
+and Environment](https://moa.gov.cy/sectors/rural-development/rural-development-and-environment/?lang=en) and the 
+Medical and Public Health Services (MPHS) of the [Ministry of Health of the Republic of 
+Cyprus](https://www.moh.gov.cy/moh/moh.nsf/medpub_en/medpub_en?OpenDocument).
 
 ![logosnew](https://github.com/KIOS-Research/covid-pulse-cy/assets/49236697/098d1c7e-a1c2-4834-af52-bcefadc783d0)

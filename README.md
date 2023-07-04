@@ -19,8 +19,7 @@ to better understand the dynamics and spatiotemporal trends of the COVID-19 pand
 
 ## System Architecture
 
-<center><img src="https://github.com/KIOS-Research/covid-pulse-cy/assets/49236697/20d8e152-0e16-4a18-841a
--9f4c978daa61" style="transform: scale(0.75);"></center>
+<center><img src="https://github.com/KIOS-Research/covid-pulse-cy/assets/49236697/20d8e152-0e16-4a18-841a-9f4c978daa61" style="width:75%;"></center>
 
 
 ## Data Dictionary
@@ -41,7 +40,7 @@ determination of the SARS-CoV-2 genetic fragments and the epidemiological analys
 
 - The [KIOS Research and Innovation Centre of Excellence (KIOS CoE)](https://www.kios.ucy.ac.cy/) of the [University of Cyprus](https://www.ucy.ac.cy/) who is responsible 
   for 
-the development of the SARS-CoV-2 monitoring platform .
+the development of the SARS-CoV-2 monitoring platform.
 
 - The [Molecular Virology Department of the Cyprus Institute of Neurology and Genetics (CING)](https://www.cing.ac.cy/en/about-us/biomedical-sciences-/mv) who is responsible for 
 the identification of the most prevalent SARS-CoV-2 variants in urban wastewater. 

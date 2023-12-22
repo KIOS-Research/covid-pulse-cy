@@ -208,16 +208,11 @@ else:
     else:
         FORCE_SCRIPT_NAME = "/"
 
-
-USE_X_FORWARDED_PORT = True
-
 ### COMMENT FOR WORK CSRF / UNCOMMENT FOR PROD
-SECURE_BROWSER_XSS_FILTER = True
-SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 if DEBUG == 0:
     CSRF_COOKIE_SECURE = True
-    CSRF_COOKIE_HTTPONLY = True
+    # CSRF_COOKIE_HTTPONLY = True
 
 CSP_DEFAULT_SRC = ("'none'",)
 CSP_STYLE_SRC = ("'self'","'unsafe-inline'")

@@ -6,7 +6,7 @@
 [![Lifecycle:
 development](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable-1)
 [![](https://img.shields.io/github/v/release/KIOS-Research/covid-pulse-cy?color=green&label=GitHub)](https://github.com/KIOS-Research/covid-pulse-cy/releases/tag/v1.0.0)
-[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-yellow.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![License: BSD-3](https://img.shields.io/badge/License-BSD3-yellow.svg)](https://opensource.org/license/bsd-3-clause)
 [![](https://img.shields.io/badge/doi-10.5281/zenodo.8114572-yellowgreen.svg)](https://doi.org/10.5281/zenodo.8114572)
 
 <!-- badges: end -->

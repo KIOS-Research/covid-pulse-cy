@@ -16,7 +16,27 @@ development](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://l
 Systematically monitoring of urban wastewater in Cyprus for the presence of selected RNA genetic markers of the SARS-CoV-2 virus and its variants, 
 to better understand the dynamics and spatiotemporal trends of the COVID-19 pandemic.  
 
+## How to Cite
 
+Karaolia, P., Quattrocchi, A., Richter, J., Loutsiou, P., Iakovides, I.C., Violaris, A., Manoli, K., Michael, C., Christodoulou, C., Pavlou, P., Kyriakou, M., Eliades, D.G., Haralambous, C., Constantinou, E., Michael, S.G., Larcou-Yiannakou, A., Nikolopoulos, G., & Fatta-Kassinos, D. (2024). **Leveraging wastewater: Validating the national-scale SARS-CoV-2 surveillance system in Cyprus for elevated public health surveillance and enhanced epidemiological insight**. *Journal of Environmental Chemical Engineering, 12*(3), 112953.  
+[https://doi.org/10.1016/j.jece.2024.112953](https://doi.org/10.1016/j.jece.2024.112953)
+
+### BibTeX Citation
+```
+@article{KARAOLIA2024112953,
+  title = {Leveraging wastewater: Validating the national-scale SARS-CoV-2 surveillance system in Cyprus for elevated public health surveillance and enhanced epidemiological insight},
+  journal = {Journal of Environmental Chemical Engineering},
+  volume = {12},
+  number = {3},
+  pages = {112953},
+  year = {2024},
+  issn = {2213-3437},
+  doi = {https://doi.org/10.1016/j.jece.2024.112953},
+  url = {https://www.sciencedirect.com/science/article/pii/S2213343724010832},
+  author = {Popi Karaolia and Annalisa Quattrocchi and Jan Richter and Panagiota Loutsiou and Iakovos C. Iakovides and Anaxagoras Violaris and Kyriakos Manoli and Costas Michael and Christina Christodoulou and Pavlos Pavlou and Marios Kyriakou and Demetrios G. Eliades and Christos Haralambous and Elisavet Constantinou and Stella G. Michael and Angeliki Larcou-Yiannakou and Georgios Nikolopoulos and Despo Fatta-Kassinos},
+  keywords = {COVID-19, SARS-CoV-2, Urban Wastewater, Variants of Concern, Wastewater-Based Epidemiology, Wastewater Surveillance}
+}
+```
 
 ## System Architecture
 
